@@ -29,7 +29,7 @@ module.exports = {
 
         const cardsCollection = await cards();
         let allCards = await cardsCollection.find({}).toArray();
-         console.log(allCards)
+        //console.log(allCards)
         return allCards;
     
     },
@@ -59,15 +59,31 @@ module.exports = {
         const cardsCollection = await cards();
         
         let parsedId=await this.parseId(id);
-        console.log(body);
         
         const updatedInfo=await cardsCollection.updateOne({_id: parsedId}, {$set: body});
 
         if (updatedInfo.modifiedCount === 0)
             throw "Cannot not update the task successfully.";
+
+        const updatedCard = await this.getCardById(id);
         
-        return oldTask;
+        return updatedCard;
         
      },
+
+     async deleteCard(id) {
+        const cardsCollection = await cards();
+        
+        if (!id) throw "Bad Request: missing id";
+       
+        let parsedId=await this.parseId(id);
+
+        const deletedCard= await this.getCardById(id);
+        const deletionInfo = await cardsCollection.removeOne({_id: parsedId});
+        if (deletionInfo.deletedCount === 0) 
+            throw "Cannot not delete with id of "+ '${id}';
+
+        return deletedCard;
+    }
 
 };

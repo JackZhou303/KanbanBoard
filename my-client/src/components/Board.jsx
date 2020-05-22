@@ -63,15 +63,7 @@ const Board = () => {
                 _id: item._id,
                 category: category});
         }
-
-       /*  const responseJson = await ServiceApi.insert_single_data({
-            id: 1,
-            category: "rw",
-            content: "Sandwich",
-            type :"card"}); */
-
-        /* const all_cards= await ServiceApi.get_all_data();
-           console.log(all_cards); */    
+          
     };
 
 
@@ -82,7 +74,7 @@ const Board = () => {
                  <div key={c.category} className="col-wrapper">
                     <div className="board">
 
-                    <h2 className={"col-header"}>{c.category.toUpperCase()}</h2>
+                    <h2 className={"col-header"}>{c.category==="rw"? "Rewards": c.category.toUpperCase()}</h2>
                     {c.category!=="rw" ? 
                         <DropWrapper onDrop={onDrop} category={c.category}>
                             <Col>

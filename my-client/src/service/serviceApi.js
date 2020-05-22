@@ -36,17 +36,33 @@ export default class ServiceApi {
     static async update_category(data){
         console.log(data._id);
         try {
-            const response= await fetch("http://localhost:4000/api/card/"+ String(data._id), {
+            const response= await fetch("http://localhost:4000/api/update/"+ String(data._id), {
                 method: 'PATCH',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify ({
-                    _id: String(data._id),
                     category: data.category
                 })
             })
+            const responseJson= response.json();
+            console.log(responseJson)
+            return responseJson;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    static async delete_entry(data){
+        console.log(data._id);
+        try {
+            const response= await fetch("http://localhost:4000/api/remove/"+ String(data._id), {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }})
             const responseJson= response.json();
             console.log(responseJson)
             return responseJson;

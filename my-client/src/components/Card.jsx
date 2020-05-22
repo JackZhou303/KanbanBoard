@@ -1,13 +1,16 @@
 import React from 'react'
 import ItemTypes from './ItemTypes'
 import { useDrag } from 'react-dnd'
+import { ServiceApi } from '../service'
 
 function Card(props) {
 
-  const close=()=>{
+  const close= async ()=>{
      let tab=document.getElementById(props.id);
      console.log(tab);
      tab.style.display="none"
+     //console.log(props.item._id)
+     await ServiceApi.delete_entry({_id: props.item._id});
   }
 
   const [{isDragging}, drag] = useDrag({

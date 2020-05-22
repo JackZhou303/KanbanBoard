@@ -47,7 +47,7 @@ router.get('/all_cards', async (req, res) => {
 
 })
 
-router.patch("/card/:id", async (req, res) => {
+router.patch("/update/:id", async (req, res) => {
     const {category} = req.body;
 
     if(typeof category !== 'string'){
@@ -67,5 +67,19 @@ router.patch("/card/:id", async (req, res) => {
       res.status(500).json({error:e});
     }
  });
+
+
+ 
+router.delete("/remove/:id", async (req, res) => {
+  console.log(req.params.id)
+
+  try {
+    const deletedCard=await helper.deleteCard(req.params.id);
+    res.status(200).json(deletedCard);
+    }
+  catch (e) {
+    res.status(500).json({error:e});
+     }
+  });
 
 module.exports = router;
