@@ -20,7 +20,6 @@ const Board = () => {
             setItems(all_cards);
             setIndex(parseInt(all_cards[all_cards.length-1].id));
         }
-        //console.log(index);
     }
     fetchData();
       });

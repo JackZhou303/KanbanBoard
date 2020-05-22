@@ -3,6 +3,7 @@ import { useDrop } from "react-dnd";
 import ITEM_TYPE from "./ItemTypes";
 
 const DropWrapper = ({ onDrop, children, category }) => {
+
     const [{ isOver }, drop] = useDrop({
         accept: ITEM_TYPE.CARD,
 

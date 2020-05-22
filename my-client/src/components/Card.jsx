@@ -7,9 +7,9 @@ function Card(props) {
 
   const close= async ()=>{
      let tab=document.getElementById(props.id);
-     //console.log(tab);
-     tab.style.display="none"
-     //console.log(props.item._id)
+
+     tab.style.display="none";
+     
      await ServiceApi.delete_entry({_id: props.item._id});
   }
 
