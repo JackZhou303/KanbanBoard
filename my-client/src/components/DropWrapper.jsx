@@ -5,11 +5,6 @@ import ITEM_TYPE from "./ItemTypes";
 const DropWrapper = ({ onDrop, children, category }) => {
     const [{ isOver }, drop] = useDrop({
         accept: ITEM_TYPE.CARD,
-        /* canDrop: (item, monitor) => {
-            const itemIndex = statuses.findIndex(si => si.status === item.status);
-            const statusIndex = statuses.findIndex(si => si.status === status);
-            return [itemIndex + 1, itemIndex - 1, itemIndex].includes(statusIndex);
-        }, */
 
         drop: (item, monitor) => {
             onDrop(item, monitor, category);

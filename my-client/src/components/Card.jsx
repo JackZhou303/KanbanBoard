@@ -20,8 +20,6 @@ function Card(props) {
     })
   });
 
-//console.log(props.id)
-
 return <div ref={drag} className="card" id={props.id}>
   {props.item.content}
   {props.category !=="rw" ? <span className="close" onClick={close}>x</span>:" "}

@@ -23,8 +23,6 @@ body {
   margin: 0;
 }
 
-
-
 .board {
   display: flex;
   flex-direction: column;
@@ -41,7 +39,6 @@ body {
 
   padding:10px;
 }
-
 
 .card{
     position: relative;
