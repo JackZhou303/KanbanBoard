@@ -59,6 +59,7 @@ module.exports = {
         const cardsCollection = await cards();
         
         let parsedId=await this.parseId(id);
+        console.log(body);
         
         const updatedInfo=await cardsCollection.updateOne({_id: parsedId}, {$set: body});
 
