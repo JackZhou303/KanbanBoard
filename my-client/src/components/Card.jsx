@@ -7,7 +7,7 @@ function Card(props) {
 
   const close= async ()=>{
      let tab=document.getElementById(props.id);
-     console.log(tab);
+     //console.log(tab);
      tab.style.display="none"
      //console.log(props.item._id)
      await ServiceApi.delete_entry({_id: props.item._id});
@@ -20,7 +20,7 @@ function Card(props) {
     })
   });
 
-console.log(props.id)
+//console.log(props.id)
 
 return <div ref={drag} className="card" id={props.id}>
   {props.item.content}

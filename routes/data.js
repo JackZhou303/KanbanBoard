@@ -3,8 +3,6 @@ const router = express.Router();
 const helper= require('./data.helper');
 
 router.post('/card', async (req, res) => {
-    console.log("pass");
-    console.log(req.body);
 
     let {id, category, content, type} = req.body;
 
@@ -55,8 +53,6 @@ router.patch("/update/:id", async (req, res) => {
        return;
 
     }
-
-    //const body={category: category}
 
     console.log(req.params.id);
     try{

@@ -1,4 +1,5 @@
 export default class ServiceApi {
+    
     static async get_all_data(){
         try {
             const response= await fetch("http://localhost:4000/api/all_cards")
