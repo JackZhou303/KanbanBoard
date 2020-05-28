@@ -4,15 +4,15 @@ const helper= require('./data.helper');
 
 router.post('/card', async (req, res) => {
 
-    let {id, category, content, type} = req.body;
+    let {category, content, type} = req.body;
 
-    if(!id||!category|| !content||!type)
+    if(!category|| !content||!type)
     {
        res.status(400).json({error: "Bad Request: missing fileds" });
        return;
     } 
     
-    if(typeof id !== "number" || typeof category !== "string" || typeof content !== "string"||
+    if( typeof category !== "string" || typeof content !== "string"||
      typeof type !== "string")
     {
        res.status(400).json({error: "Bad Request: type error" });
@@ -21,7 +21,7 @@ router.post('/card', async (req, res) => {
 
     try {
       const newCard = await helper.createCard(
-        id, category, content, type
+        category, content, type
       );
       res.status(200).json(newCard);
     } catch (e) {

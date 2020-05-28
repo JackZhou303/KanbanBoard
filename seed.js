@@ -7,22 +7,18 @@ async function main() {
     
 
     const data = [{
-        id: 1,
         category: "rw",
         content: "Cake",
         type :"card"
     }, {
-        id: 2,
         category: "rw",
         content: "Cat",
         type :"card"
     }, {
-        id: 3,
         category: "rw",
         content: "Sandwich",
         type :"card"
     } , {
-        id: 4,
         category: "rw",
         content: "Book",
         type :"card"
@@ -40,8 +36,8 @@ async function main() {
       });
 
   for(let i=0; i< data.length; i++){
-     let {id, category, content, type}= data[i];
-     await helper.createCard(id, category, content, type);
+     let {category, content, type}= data[i];
+     await helper.createCard(category, content, type);
   }
   console.log("Done seeding database");
 

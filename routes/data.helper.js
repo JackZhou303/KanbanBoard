@@ -34,12 +34,11 @@ module.exports = {
     
     },
 
-    async createCard(id, category, content, type){
+    async createCard(category, content, type){
 
         const cardsCollection = await cards();
     
         let newCard = {
-        id: id,
         category: category,
         content: content,
         type: type

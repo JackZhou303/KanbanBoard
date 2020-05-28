@@ -13,14 +13,14 @@ function Card(props) {
      await ServiceApi.delete_entry({_id: props.item._id});
   }
 
-  const [{isDragging}, drag] = useDrag({
+  const [, drag] = useDrag({
     item: { type: ItemTypes.CARD, category: props.category, ...props.item },
-    collect: monitor => ({
+    /* collect: monitor => ({
       isDragging: monitor.isDragging()
-    })
+    }) */
   });
 
-return <div ref={drag} className="card" id={props.id}>
+return <div ref={drag} className="card" id={props.item._id}>
   {props.item.content}
   {props.category !=="rw" ? <span className="close" onClick={close}>x</span>:" "}
   </div>

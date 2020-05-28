@@ -20,7 +20,6 @@ export default class ServiceApi {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify ({
-                    id: data.id,
                     category: data.category,
                     content: data.content,
                     type : data.type
