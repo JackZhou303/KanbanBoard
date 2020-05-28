@@ -6,8 +6,8 @@ import { ServiceApi } from '../service'
 function Card(props) {
 
   const close= async ()=>{
-     let tab=document.getElementById(props.id);
-
+     let tab=document.getElementById(props.item._id);
+      
      tab.style.display="none";
      
      await ServiceApi.delete_entry({_id: props.item._id});

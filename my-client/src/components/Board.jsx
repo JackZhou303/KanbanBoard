@@ -74,13 +74,13 @@ const Board = () => {
                         <DropWrapper onDrop={onDrop} category={c.category}>
                             <Col>
                                 { items.filter(i => i.category === c.category)
-                                .map(i => <Card key={i._id} item={i} category={c.category} />)
+                                .map(i => <Card key={String(i._id)} item={i} category={c.category} />)
                                 }
                             </Col>
                         </DropWrapper>
                         :<Col>
                         { items.filter(i => i.category === c.category)
-                        .map(i => <Card key={i._id} item={i} category={c.category} />)
+                        .map(i => <Card key={String(i._id)} item={i} category={c.category} />)
                         }
                     </Col>}
                 </div>
