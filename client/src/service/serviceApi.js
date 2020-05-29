@@ -2,7 +2,7 @@ export default class ServiceApi {
     
     static async get_all_data(){
         try {
-            const response= await fetch("http://localhost:8080/api/all_cards")
+            const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/all_cards")
             const responseJson= response.json();
             console.log(responseJson)
             return responseJson;
@@ -13,7 +13,7 @@ export default class ServiceApi {
 
     static async insert_single_data(data){
         try {
-            const response= await fetch("http://localhost:8080/api/card", {
+            const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/card", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -36,7 +36,7 @@ export default class ServiceApi {
     static async update_category(data){
         console.log(data._id);
         try {
-            const response= await fetch("http://localhost:8080/api/update/"+ String(data._id), {
+            const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/update/"+ String(data._id), {
                 method: 'PATCH',
                 headers: {
                     'Accept': 'application/json',
@@ -57,7 +57,7 @@ export default class ServiceApi {
     static async delete_entry(data){
         console.log(data._id);
         try {
-            const response= await fetch("http://localhost:8080/api/remove/"+ String(data._id), {
+            const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/remove/"+ String(data._id), {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',

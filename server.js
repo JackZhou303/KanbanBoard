@@ -12,7 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 configRoutes(app);
+const PORT = process.env.PORT || 8080;
 
-app.listen(process.env.PORT, ()=> {
-    console.log("The Server is running on port " + process.env.PORT);
+app.listen(PORT, ()=> {
+    console.log("The Server is running on port " + PORT);
 });
