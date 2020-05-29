@@ -1,8 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
 
 const mongoConfig = {
-  serverUrl: "mongodb://localhost:27017/",
-  database: "Zhou-Yujie-Kanban-board"
+  serverUrl: "mongodb+srv://Jack:7P3KcrTXOLlmZUOx@kanbandatabase-hmezw.gcp.mongodb.net/test?retryWrites=true&w=majority",
+  database: "KanbanDatabase"
 };
 
 let _connection = undefined;
