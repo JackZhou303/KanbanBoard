@@ -1,6 +1,6 @@
 import React from "react";
 
-const Col = ({ isOver, children }) => {
+const Col = ({isOver, children }) => {
 
     return (
         <div className='col'>

@@ -9,7 +9,6 @@ import { ServiceApi } from '../service';
 const Board = () => {
 
     const [items, setItems] = useState([]);
-    //const [index, setIndex] = useState(0);
 
     useEffect(() => {
         async function fetchData() {
@@ -17,7 +16,6 @@ const Board = () => {
         if(items.length===0){
             const all_cards= await ServiceApi.get_all_data();
             setItems(all_cards);
-            //setIndex(parseInt(all_cards[all_cards.length-1].id));
         }
     }
     fetchData();
@@ -42,11 +40,8 @@ const Board = () => {
 
   
         setItems(prevState=>{
-            //console.log(prevState)
             let newItems;
             if(item.category==="rw"){
-                //setIndex(index+1);
-                //console.log(item);
                 newItems = prevState
                 .filter(i => i._id !== item._id)
                 .concat({ ...item, category})
@@ -54,7 +49,6 @@ const Board = () => {
             } else {
             newItems = prevState.filter(i => i._id !== item._id)
             .concat({...item, category}); }
-            console.log(item);
             return [...newItems];
 
         });

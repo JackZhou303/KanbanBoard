@@ -15,9 +15,6 @@ function Card(props) {
 
   const [, drag] = useDrag({
     item: { type: ItemTypes.CARD, category: props.category, ...props.item },
-    /* collect: monitor => ({
-      isDragging: monitor.isDragging()
-    }) */
   });
 
 return <div ref={drag} className="card" id={props.item._id}>

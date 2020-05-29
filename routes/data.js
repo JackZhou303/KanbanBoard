@@ -36,8 +36,6 @@ router.get('/all_cards', async (req, res) => {
     
     try {
         const cardList = await helper.getCards();
-        /* const no_id_list= cardList.map(({ _id, ...rest}) => rest);
-        console.log(no_id_list); */
         res.status(200).json(cardList);
      } catch (e){
         res.status(500).json({error:e});
@@ -53,8 +51,6 @@ router.patch("/update/:id", async (req, res) => {
        return;
 
     }
-
-    console.log(req.params.id);
     try{
       const updatedCard = await helper.updateCard(req.params.id, req.body);
       res.status(200).json(updatedCard);
@@ -67,7 +63,6 @@ router.patch("/update/:id", async (req, res) => {
 
  
 router.delete("/remove/:id", async (req, res) => {
-  console.log(req.params.id)
 
   try {
     const deletedCard=await helper.deleteCard(req.params.id);

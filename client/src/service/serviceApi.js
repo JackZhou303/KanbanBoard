@@ -4,7 +4,6 @@ export default class ServiceApi {
         try {
             const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/all_cards")
             const responseJson= response.json();
-            console.log(responseJson)
             return responseJson;
         } catch (error) {
             console.log(error)
@@ -26,7 +25,6 @@ export default class ServiceApi {
                 })
             })
             const responseJson= response.json();
-            console.log(responseJson)
             return responseJson;
         } catch (error) {
             console.log(error)
@@ -34,7 +32,6 @@ export default class ServiceApi {
     }
 
     static async update_category(data){
-        console.log(data._id);
         try {
             const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/update/"+ String(data._id), {
                 method: 'PATCH',
@@ -47,7 +44,6 @@ export default class ServiceApi {
                 })
             })
             const responseJson= response.json();
-            console.log(responseJson)
             return responseJson;
         } catch (error) {
             console.log(error)
@@ -55,7 +51,6 @@ export default class ServiceApi {
     }
 
     static async delete_entry(data){
-        console.log(data._id);
         try {
             const response= await fetch("https://sage-dragon-278619.uc.r.appspot.com/api/remove/"+ String(data._id), {
                 method: 'DELETE',
@@ -64,7 +59,6 @@ export default class ServiceApi {
                     'Content-Type': 'application/json'
                 }})
             const responseJson= response.json();
-            console.log(responseJson)
             return responseJson;
         } catch (error) {
             console.log(error)

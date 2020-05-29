@@ -29,7 +29,6 @@ module.exports = {
 
         const cardsCollection = await cards();
         let allCards = await cardsCollection.find({}).toArray();
-        //console.log(allCards)
         return allCards;
     
     },
