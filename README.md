@@ -33,7 +33,7 @@ to install dependencies and node_modules folder for server. And once that is don
  npm start
 ```
 
-2. For Client: - In the /my-client directory of the project, where you can see package.json. Run 
+2. For Client: - In the /client directory of the project, where you can see package.json. Run 
 
 ```bash 
  npm install
